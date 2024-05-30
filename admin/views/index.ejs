@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Register</title>
+    <style>
+        form{
+            height: 200px;
+            width: 300px;
+            box-shadow: 0 0 10px #000;
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .logout{
+            background-color: aqua;
+            padding: 5px 7px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        h3{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <a href="logout"><button class="logout">logout</button></a><br><br>
+<form method="post">
+    <table>
+        <h3>Add User</h3>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="save" name="submit"></td>
+        </tr>
+    </table>
+</form><br><br>
+
+<table border="">
+    <th>id</th>
+    <th>name</th>
+    <th>email</th>
+    <th>password</th>
+
+    <% results.forEach(function(user){ %>
+        <tr>
+            <td><%=user.id%></td>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+            <td><%=user.password%></td>
+        </tr>
+      <% }); %>
+</table>
+</center>
+</body>
+</html>
+

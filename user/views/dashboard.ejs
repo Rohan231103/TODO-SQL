@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+
+<body>
+    <center>
+        <a href="/logout"><button class="btn">Logout</button></a><br><br>
+
+        <form>
+            <h3>Welcome to User Dashboard !!</h3>
+
+            <table border="">
+                <th>Task id</th>
+                <th>Task Name</th>
+                <th>Task User</th>
+                <th>Pending</th>
+                <th>Accept</th>
+                <th>Decline</th>
+                <th>Running</th>
+                <th>Completd</th>
+
+                <% results.forEach(function(task){%>
+                    <tr>
+                        <td>
+                            <%= task.task_id %>
+                        </td>
+                        <td>
+                            <%= task.task_name %>
+                        </td>
+                        <td>
+                            <%= task.task_user %>
+                        </td>
+                        <td><a href="updatestatus/0/<%= task.task_id %>">Pending</a></td>
+                        <td><a href="updatestatus/1/<%= task.task_id %>">Accept</a></td>
+                        <td><a href="updatestatus/2/<%= task.task_id %>">Decline</a></td>
+                        <td><a href="updatestatus/3/<%= task.task_id %>">Running</a></td>
+                        <td><a href="updatestatus/4/<%= task.task_id %>">Completed</a></td>
+                    </tr>
+                    <%})%>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

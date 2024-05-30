@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        .btn{
+            background-color: gray;
+            color: #fff;
+            /* font-weight: bold; */
+            font-style: popins;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h3>Welcome to Admin Dashboard !!</h3>
+
+    <div class="btn-admin">
+        <a href="/adduser"><button class="btn">Add User</button></a>
+        <a href="/update"><button class="btn">Manage User</button></a>
+        <a href="/addtask"><button class="btn">Add Task</button></a>
+        <a href="/showtask"><button class="btn">Manage Task</button></a>
+        <a href="/viewtask"><button class="btn">View Task</button></a>
+        <a href="/logout"><button class="btn">Logout</button></a><br><br>
+
+    </div>
+
+    <h4>* User Data !</h4>
+
+    <table border="1">
+        
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>User Password</th>
+        <!-- <th>Update User</th> -->
+        <!-- <th>Delete User</th> -->
+
+    
+        <% results.forEach(function(user){%>
+            <tr>
+                <td><%= user.id%></td>
+                <td><%= user.name%></td>
+                <td><%= user.email%></td>
+                <td><%= user.password%></td>
+                <!-- <td><a href="update/<%= user.id %>">Update</a></td> -->
+                <!-- <td><a href="delete/<%= user.id %>">delete</a></td> -->
+            </tr>
+        <%})%>
+    </table><br>
+</center>
+</body>
+</html>
+

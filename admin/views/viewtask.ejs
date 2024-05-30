@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viewtask</title>
+    <style>
+        .btn{
+            background-color: gray;
+            color: #fff;
+            /* font-weight: bold; */
+            font-style: popins;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body><br>
+    <center>
+        <div class="btn-admin">
+            <!-- <a href="/adduser"><button class="btn">Add User</button></a> -->
+            <!-- <a href="/update"><button class="btn">Manage User</button></a> -->
+            <a href="/addtask"><button class="btn">Add Task</button></a>
+            <a href="/showtask"><button class="btn">Manage Task</button></a>
+            <!-- <a href="/viewtask"><button class="btn">View Task</button></a> -->
+            <a href="/logout"><button class="btn">Logout</button></a><br><br>
+    
+        </div>
+<table border="">
+    <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>User Name</th>
+        <th>Status</th>
+    </tr>
+
+    <% results.forEach(function(task){ %>
+        <tr>
+            <td><%= task.task_id %></td>
+            <td><%= task.task_name %></td>
+           
+            <td><%= task.task_user %></td>
+            <!-- <td><%= task.status %></td> -->
+            <td>
+                <% if (task.status==0) { %>
+                    <b>Pending</b>
+                <% }else if(task.status==1) { %>
+                    <b>Accept</b>
+                <% }else if(task.status==2) { %>
+                    <b>Decline</b>
+                <% }else if(task.status==3) { %>
+                    <b>Running</b>
+                <% }else if(task.status==4) { %>
+                    <b>Completed</b>
+                <% } %>
+            </td>
+        </tr>
+    <% }) %>
+
+</table>
+</center>
+</body>
+</html>

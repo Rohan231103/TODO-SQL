@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <style>
+        .btn{
+            background-color: lightblue;
+            padding: 8px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        form{
+            width: 300px;
+            height: 170px;
+            box-shadow: 0 0 10px gray;
+            margin: 20px !important;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h3>* Add Task !</h3>
+
+    <form method="post"><br>
+        <table>
+            <tr>
+                <td>Task Name :</td>
+                <td><input type="text" name="task_name"></td><br>
+            </tr>
+            <tr>
+                <td>Select Employee:</td>
+                <td>
+                    <select name="id" id="">
+                        <option disabled selected>Select User</option>
+                        <% results.forEach(function(user) {%>
+                            <option value="<%= user.name %>"><%= user.name %></option>
+                        <% }) %>
+                    </select><br>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="#"><button class="btn">Submit</button></a></td>
+                <!-- <td><input type="submit" name="submit" value="save"></td> -->
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>

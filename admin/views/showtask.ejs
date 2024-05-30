@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Dashboard</title>
+</head>
+
+<body>
+    <center>
+        <a href="/logout"><button class="btn">Logout</button></a><br><br>
+
+        <form>
+            <h3>Welcome to Dashboard !!</h3>
+
+            <table border="">
+                <th>Task id</th>
+                <th>Task Name</th>
+                <th>Task User</th>
+                <th>Status</th>
+                <th>Update Task</th>
+                <th>Delete Task</th>
+
+                <% results.forEach(function(task){%>
+                    <tr>
+                        <td>
+                            <%= task.task_id %>
+                        </td>
+                        <td>
+                            <%= task.task_name %>
+                        </td>
+                        <td>
+                            <%= task.task_user %>
+                        </td>
+                        <td>
+                            <%= task.status %>
+                        </td>
+                        <td><a href="managetask/<%= task.task_id %>">Update</a></td>
+                        <td><a href="deletetask/<%= task.task_id %>">Delete</a></td>
+                    </tr>
+                    <%})%>
+            </table>
+        </form>
+    </center>
+</body>
+
+</html>

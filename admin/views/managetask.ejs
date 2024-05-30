@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+</head>
+<body>
+    <h3>Update Task Details!</h3>
+    <% results.forEach(function(task){ %>
+
+        <form method="post">
+            <table>
+                <tr>
+                    <td>Task Name :</td>
+                    <td><input type="text" name="task_name" value="<%= task.task_name %>"></td>
+                </tr>
+                <tr>
+                    <td>Select Employee:</td>
+                    <td>
+                        <select name="task_user" id="">
+                            <option disabled selected>Select User</option>
+                            <% results.forEach(function(task) {%>
+                                <option value="<%= task.task_user %>"><%= task.task_user %></option>
+                            <% }) %>
+                        </select><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Update" name="save"></td>
+                </tr>
+            </table>
+        </form>
+        
+    <%}) %>   
+
+    
+</body>
+</html>
